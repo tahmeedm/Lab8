@@ -1,9 +1,18 @@
+// =======================================================
+// Name: lab8_exe_D.html
+// Assignment: Lab 8
+// Author(s): Martin Liu, Tahmeed Mahmud
+// Submission: March 11, 2024
+// Description: React.
+// =======================================================
 import React, { useEffect, useState } from 'react';
 import { fetchProducts } from '../services/apiService';
 import { useProductsContext } from '../context/ProductsContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
   const { products, setProducts } = useProductsContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getProducts = async () => {
@@ -14,12 +23,19 @@ const ProductList = () => {
   }, [setProducts]);
 
   return (
-    <div>
-      {products.map((product) => (
-        <div key={product.id}>{product.title}</div>
+    <div className="list-group">
+      {products.map((product, index) => (
+        <button
+          key={product.id}
+          className="list-group-item d-flex justify-content-between align-items-center hover-highlight"
+          onClick={() => navigate(`/product/${product.id}`)}
+        >
+          <span>{index + 1}. {product.title}</span>
+        </button>
       ))}
     </div>
   );
 };
 
 export default ProductList;
+
