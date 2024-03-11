@@ -11,7 +11,7 @@ import { getProductDetails } from '../services/apiService';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const ProductDetails = () => {
-  // Access route parameter
+ 
   const { productId } = useParams();
   const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ const ProductDetails = () => {
     }
   }, [productId]);
 
-  // Function to handle after delete
+ 
   const onProductDeleted = async (product) => {
     navigate(-1);
   };
