@@ -42,7 +42,7 @@
     justify-content: space-between;
   }
   
-  /* Tooltip styling */
+  
   .tooltip-inner {
     background-color: #f0f0f0;
     color: #282c34;
@@ -51,7 +51,7 @@
     font-size: 0.875rem;
   }
   
-  /* for hovering list's items */
+ 
   .hover-highlight:hover {
     background-color: #f8f9fa !important;
   }
